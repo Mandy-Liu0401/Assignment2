@@ -24,11 +24,13 @@ CREATE TABLE IF NOT EXISTS 'books' (
     PRIMARY KEY ('id')
 )
 
+-- insert some test data for two tables
 INSERT INTO 'users' ('id', 'username', 'email','password') VALUES
 (1, 'test', 'test@gmail.com', 'pass1');
 
-INSERT INTO 'books' ('id', 'title', 'email','password') VALUES
-(1, 'test', 'test@gmail.com', 'pass1');
+
+INSERT INTO 'books' ('id', 'title', 'author','genre','description') VALUES
+(1, 'testbook', 'testauthor', 'romance','It is a romance book.');
 
 
 -- CREATE TABLE IF NOT EXISTS 'movies' (
