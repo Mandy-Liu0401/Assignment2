@@ -1,4 +1,5 @@
 -- Database: `booklogue` and php web application user
+DROP DATABASE IF EXISTS booklogue;
 CREATE DATABASE booklogue;
 GRANT USAGE ON *.* TO 'appuser'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON booklogue.* TO 'appuser'@'localhost';
