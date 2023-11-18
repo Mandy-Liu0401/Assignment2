@@ -33,24 +33,3 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 
 INSERT INTO `books` (`id`, `title`, `author`, `genre`, `description`,`comment`) VALUES
 (1, 'testbook', 'testauthor', 'romance', 'It is a romance book.','I like this book a lot!');
-
-
--- CREATE TABLE IF NOT EXISTS 'movies' (
---     'id' int(8) NOT NULL AUTO_INCREMENT,
---     'title' varchar(255) NOT NULL,
---     'genre' varchar(255),
---     'rating' varchar(255),
---     'description' TEXT,
---     'Runtime' varchar(255),
---     PRIMARY KEY ('id')
--- )
-
--- CREATE TABLE IF NOT EXISTS 'games' (
---     'id' int(8) NOT NULL AUTO_INCREMENT,
---     'title' varchar(255) NOT NULL,
---     'genre' varchar(255),
---     'rating' varchar(255),
---     'description' TEXT,
---     'publisher' varchar(255),
---     PRIMARY KEY ('id')
-

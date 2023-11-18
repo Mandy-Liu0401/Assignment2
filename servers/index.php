@@ -48,6 +48,8 @@
                     <th>Title</th>
                     <th>Author</th>
                     <th>Genre</th>
+                    <th>Description</th>
+                    <th>Comment</th>
                     <th>&nbsp</th>
                     <th>&nbsp</th>
                     <th>&nbsp</th>
@@ -59,26 +61,30 @@
                             <?php echo $results['id']; ?>
                         </td>
                         <td>
-                            <?php echo $results['name']; ?>
+                            <?php echo $results['title']; ?>
                         </td>
                         <td>
-                            <?php echo $results['address']; ?>
+                            <?php echo $results['author']; ?>
                         </td>
                         <td>
-                            <?php echo $results['salary']; ?>
+                            <?php echo $results['genre']; ?>
                         </td>
-                        <td><a class="action" href="<?php echo "show.php?id=" . $results['id']; ?>">View</a></td>
-                        <td><a class="action" href="<?php echo "edit.php?id=" . $results['id']; ?>">Edit</a></td>
-                        <td><a class="action" href=<?php echo "delete.php?id=" . $results['id']; ?>">delete</a></td>
+                        <td>
+                            <?php echo $results['description']; ?>
+                        </td>
+                        <td>
+                            <?php echo $results['comment']; ?>
+                        </td>
+
+                        <td><a class="action" href="<?php echo "viewBook.php?id=" . $results['id']; ?>">View</a></td>
+                        <td><a class="action" href="<?php echo "editBook.php?id=" . $results['id']; ?>">Edit</a></td>
+                        <td><a class="action" href=<?php echo "deleteBook.php?id=" . $results['id']; ?>">delete</a></td>
 
                 </tr>
                 <?php } ?>
             </table>
             <br>
             <br>
-
-
-
 
             <?php include('server/footer.php'); ?>
 
