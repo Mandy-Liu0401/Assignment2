@@ -19,17 +19,15 @@
 
             <form action='create.php' method="POST">
 
-                <dl>
-                    <dt>Book Title</dt>
-                    <dd><input type="text" name="title" /></dd>
-                </dl>
-                <dl>
-                    <dt>Author</dt>
-                    <dd><input type="text" name="author" /></dd>
+            <label for="title" class="aaa">Title</label>
+            <input type="text" name="title" />
+            <br>
 
-                </dl>
-
-                <label for="genre" class="aaa">Select Genre</label>
+            <label for="author" class="aaa">Author</label>
+            <input type="text" name="author" /> 
+            <br>
+            
+            <label for="genre" class="aaa">Select Genre</label>
                 <select name="genre" id="genre">
                     <option value="nonFiction" selected>Non-fiction</option>
                     <option value="childrens">Children's Book</option>

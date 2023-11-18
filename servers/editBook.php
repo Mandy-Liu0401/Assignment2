@@ -39,7 +39,7 @@ else {
 }
 ?>
 
-<?php include 'headerEm.php' ?>;
+<?php include 'headerEm.php'; ?>
 
 <div id="content">
 
@@ -63,11 +63,26 @@ else {
             <dl>
                 <dt>Author</dt>
                 <dd><input type="text" name="author" value="<?php echo $result['author']; ?>" /></dd>
-                </dd>
+            </dd>
             </dl>
             <dl>
                 <dt>Book Genre</dt>
-                <dd><input type="text" name="genre" value="<?php echo $result['salary']; ?>" /></dd>
+                <dd>
+                    <select name="genre" id="genre" >
+                    <!-- using the ternary operator (? :) to conditionally output the string 'selected' 
+                    if the value of $result['genre'] is equal to 'biography', 
+                    otherwise, it outputs an empty string. -->
+                    <option value="nonFiction" <?php echo ($result['genre'] == 'nonFiction') ? 'selected' : ''; ?>>Non-fiction</option>
+                    <option value="childrens" <?php echo ($result['genre'] == 'childrens') ? 'selected' : ''; ?>>Children's Book</option>
+                    <option value="fantasy" <?php echo ($result['genre'] == 'fantasy') ? 'selected' : ''; ?>>Fantasy</option>
+                    <option value="scienceFiction" <?php echo ($result['genre'] == 'scienceFiction') ? 'selected' : ''; ?>>Science-Fiction</option>
+                    <option value="romance" <?php echo ($result['genre'] == 'romance') ? 'selected' : ''; ?>>Romance</option>
+                    <option value="thriller" <?php echo ($result['genre'] == 'thriller') ? 'selected' : ''; ?>>Thriller</option>
+                    <option value="horror" <?php echo ($result['genre'] == 'horror') ? 'selected' : ''; ?>>Horror</option>
+                    <option value="history" <?php echo ($result['genre'] == 'history') ? 'selected' : ''; ?>>History</option>
+                    <option value="biography" <?php echo ($result['genre'] == 'biography') ? 'selected' : ''; ?>>Biography</option>
+                    </select>
+            </dd>
             </dl>
             <dl>
                 <dt>Description</dt>

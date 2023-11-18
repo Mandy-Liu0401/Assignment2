@@ -86,7 +86,7 @@
             <br>
             <br>
 
-            <?php include('server/footer.php'); ?>
+            <?php include('footerEM.php'); ?>
 
 </body>
 
