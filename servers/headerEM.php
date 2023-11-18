@@ -28,8 +28,7 @@
 
         <nav>
                 <ul>
-                        <li><a href="<?php echo 'books.php'; ?>">My Books</a></li>
-                        <li><a href="<?php echo 'index.php'; ?>">Sign up</a></li>
-                        <li><a href="<?php echo 'catalogue.php'; ?>">Book Collection</a></li>
+                        <li><a href="<?php echo 'index.php'; ?>">My Books</a></li>
+                        <li><a href="<?php echo 'register.php'; ?>">Sign up</a></li>
                 </ul>
         </nav>
