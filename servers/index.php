@@ -3,59 +3,84 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles/styles.css">
-    <script src="js/script.js" defer></script>
-    <title>Medialogue</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts/script.js" defer></script>
+    <script src="scripts/show.js" defer></script>
+    <title>Booklogue</title>
 </head>
 
 
 
 <body>
-<?php include 'partials/header.php';
-      require_once 'database.php';
-?>
-    <form action="userProcess.php" method="post" onsubmit="return validate()">
+    <?php include("headerEm.php") ?>
 
-        <div class="container">
-            <div class="headreg">
-                <h2>Register here</h2>
+    <?php
+    require_once('db_credentials.php');
+    require_once('database.php');
+
+    $db = db_connect();
+    //$page_title = 'Employee'; ?>
+
+
+    <?php
+
+    $sql = "SELECT * FROM books ";
+    $sql .= "ORDER BY title ASC";
+    //echo $sql;
+    $result_set = mysqli_query($db, $sql);
+
+    ?>
+
+
+
+    <div id="content">
+        <div class="subjects listing">
+            <h1>Book Collection</h1>
+
+            <div class="actions">
+                <a class="action" href="newBook.php">Add new book to your collection</a>
             </div>
 
-            <div class="regItem">
-                <label for="email" class="aaa">E-mail</label>
-                <input type="text" name="email" id="email" placeholder="Please enter your E-mail">
-                <div class="error" id="emailError"><b>*</b>  Email address is required, with format *****@****.***</div>
-            </div>
+            <table class="list">
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>&nbsp</th>
+                    <th>&nbsp</th>
+                    <th>&nbsp</th>
+                </tr>
 
-            <div class="regItem">
-                <label for="" class="aaa">Username</label>
-                <input type="text" name="username" id="username" placeholder="Please enter your Username">
-                <div class="error" id="usernameError"><b>*</b>  Username is required, maximum 40 characters long, no special characters</div>
-            </div>
+                <?php while ($results = mysqli_fetch_assoc($result_set)) { ?>
+                    <tr>
+                        <td>
+                            <?php echo $results['id']; ?>
+                        </td>
+                        <td>
+                            <?php echo $results['name']; ?>
+                        </td>
+                        <td>
+                            <?php echo $results['address']; ?>
+                        </td>
+                        <td>
+                            <?php echo $results['salary']; ?>
+                        </td>
+                        <td><a class="action" href="<?php echo "show.php?id=" . $results['id']; ?>">View</a></td>
+                        <td><a class="action" href="<?php echo "edit.php?id=" . $results['id']; ?>">Edit</a></td>
+                        <td><a class="action" href=<?php echo "delete.php?id=" . $results['id']; ?>">delete</a></td>
 
-            <div class="regItem">
-                <label for="" class="aaa">Password</label>
-                <input type="password" name="password" id="password" placeholder="Please enter your Password">
-                <div class="error" id="passwordError"><b>*</b>  Password must be minimum: 6 characters long, 1 uppercase letter, 1 lowercase letter</div>
-            </div>
-
-            <div class="regItem">
-                <label for="" class="aaa">Confirm Password</label>
-                <input type="password" id="confirm" placeholder="Please re-enter your Password">
-                <div class="error" id="confirmError"><b>*</b>  Password does not match</div>
-            </div>
-
-            <button type="submit" class="submit" id="register">Register</button>
-
-        </div>
+                </tr>
+                <?php } ?>
+            </table>
+            <br>
+            <br>
 
 
-    </form>
-    
 
-    <?php include 'partials/footer.php';?>
+
+            <?php include('server/footer.php'); ?>
 
 </body>
 
