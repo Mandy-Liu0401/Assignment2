@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS `books` (
     `author` varchar(255),
     `genre` varchar(255),
     `description` TEXT,
+    `comment` TEXT,
     PRIMARY KEY (`id`)
 );
 
@@ -30,8 +31,8 @@ CREATE TABLE IF NOT EXISTS `books` (
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 (1, 'test', 'test@gmail.com', 'pass1');
 
-INSERT INTO `books` (`id`, `title`, `author`, `genre`, `description`) VALUES
-(1, 'testbook', 'testauthor', 'romance', 'It is a romance book.');
+INSERT INTO `books` (`id`, `title`, `author`, `genre`, `description`,`comment`) VALUES
+(1, 'testbook', 'testauthor', 'romance', 'It is a romance book.','I like this book a lot!');
 
 
 -- CREATE TABLE IF NOT EXISTS 'movies' (
