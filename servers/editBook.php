@@ -43,7 +43,7 @@ else {
 
 <div id="content">
 
-    <a class="back-link" href="index.php"> Back to book collection</a>
+    <a class="back-link" href="index.php">&laquo; Back to book collection</a>
 
     <div class="page edit">
 
@@ -78,7 +78,7 @@ else {
                 <dd><input type="text" name="comment" value="<?php echo $result['comment']; ?>" /></dd>
             </dl>
 
-            <div class = button>
+            <div class = "button">
                     <input type="submit" value="Edit Book">
                     <input type="reset" value="Reset">
                 </div>

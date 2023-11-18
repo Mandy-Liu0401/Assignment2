@@ -11,7 +11,7 @@
 
     <div id="content">
 
-        <a class="back-link" href="index.php"> Back to book collection</a>
+        <a class="back-link" href="index.php">&laquo; Back to book collection</a>
 
         <div class="new_record">
 
@@ -49,7 +49,7 @@
                 <label for="comment" class="aaa">Comments</label>
                 <input type="textarea" name="comment" id="comment" placeholder="Enter your comments.">
 
-                <div class = button>
+                <div class = "button">
                     <input type="submit" value="Create new book">
                     <input type="reset" value="Reset">
                 </div>

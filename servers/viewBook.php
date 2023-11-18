@@ -27,7 +27,7 @@
 
     <div id="content">
 
-        <a class="back-link" href="index.php"> Back to book collection</a>
+        <a class="back-link" href="index.php">&laquo; Back to book collection</a>
 
         <div class="page show">
 
