@@ -44,7 +44,7 @@
         <a class="back-link" href="index.php">&laquo; Back to book collection</a>
 
         <div class="page delete">
-            <h1>Delete the Book</h1>
+            <h2>Delete the Book</h2>
             <p>Are you sure you want to delete this book?</p>
             <p class="item">
                 <?php echo $result['title']; ?>

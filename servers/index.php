@@ -36,7 +36,7 @@
 
     <div id="content">
         <div class="subjects listing">
-            <h1>Book Collection</h1>
+            <h2>Book Collection</h2>
 
             <div class="actions">
                 <a class="action" href="newBook.php">Add new book to your collection</a>

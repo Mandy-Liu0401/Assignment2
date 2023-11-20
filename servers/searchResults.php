@@ -4,7 +4,8 @@ require_once('database.php');
 include "headerEm.php";
 $db = db_connect();
 
-if ($_SERVER['REQUEST_METHOD'] == 'get') {
+// Handle form values sent by searchBook.php
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     $title = $_GET['title'];
     $author = $_GET['author'];
@@ -28,12 +29,51 @@ if ($_SERVER['REQUEST_METHOD'] == 'get') {
     if (!empty($conditions)) {
         $sql .= implode(" AND ", $conditions);
     } 
-    else {
-        $sql .= "1"; // No specific conditions, retrieve all books
+
+    $sql .= " ORDER BY title ASC";
+
+    $result_set = mysqli_query($db, $sql);
     }
 
-$sql .= " ORDER BY title ASC";
+else{
+    $sql = "SELECT * FROM books";
 
-$result_set = mysqli_query($db, $sql);
+    $result_set = mysqli_query($db, $sql);
+
+    $result = mysqli_fetch_assoc($result_set);
 }
 ?>
+
+<!-- Display the search results -->
+<div id="content">
+
+    <a class="back-link" href="index.php">&laquo; Back to book collection</a>
+    
+        <h2>Search Results</h2>
+        <div class="attributes">
+            <table class ="list">
+                <!-- Table header -->
+                <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>Description</th>
+                        <th>Comment</th>
+                </tr>
+                <?php while ($results = mysqli_fetch_assoc($result_set)) { ?>
+                    <!-- Display each book row -->
+                    <tr>
+                        <td><?php echo $results['id']; ?></td>
+                        <td><?php echo $results['title']; ?></td>
+                        <td><?php echo $results['author']; ?></td>
+                        <td><?php echo $results['genre']; ?></td>
+                        <td><?php echo $results['description']; ?></td>
+                        <td><?php echo $results['comment']; ?></td>
+                    </tr>
+                <?php } ?>
+            </table>
+        </div>
+</div>
+
+<?php include('footerEM.php'); ?>

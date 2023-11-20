@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     //redirect to viewBook page
     header("Location: viewBook.php?id=  $id");
 }
-// display the employee information
+// display the book info by id
 else {
     $sql = "SELECT * FROM books WHERE id= '$id' ";
 
@@ -47,7 +47,7 @@ else {
 
     <div class="page edit">
 
-        <h1>Edit Book Info</h1>
+        <h2>Edit Book Info</h2>
 
         <!-- point to the same page, and fill in the array content to a form -->
         <form form action="<?php echo 'editBook.php?id=' . $result['id']; ?>" method="post">

@@ -11,7 +11,7 @@ include "headerEm.php";
 ?>
 
 <div class="content">
-    <h1>Search Books</h1>
+    <h2>Search Books</h2>
     
     <form action="searchResults.php" method="get">
     <label for="title">Title:</label>

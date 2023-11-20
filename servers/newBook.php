@@ -15,7 +15,7 @@
 
         <div class="new_record">
 
-            <h1>Add new book to the collection</h1>
+            <h2>Add new book to the collection</h2>
 
             <form action='create.php' method="POST">
 
