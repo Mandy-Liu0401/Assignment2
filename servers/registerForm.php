@@ -13,7 +13,7 @@
 
 
 <body>
-<?php include ("servers/headerEm.php") ?>
+<?php include ("headerEm.php") ?>
 
 <?php
 require_once('db_credentials.php');
@@ -62,7 +62,7 @@ $db = db_connect();
     </form>
     
 
-    <?php include ('servers/footer.php');?>
+    <?php include ('footer.php');?>
 
 </body>
 
