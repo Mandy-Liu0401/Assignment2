@@ -7,12 +7,7 @@
 
 <body>
 <?php
-require_once('db_credentials.php');
-require_once('database.php');
 include "headerEm.php";
-$db = db_connect();
-
-
 ?>
 
 <div class="content">

@@ -9,19 +9,20 @@
     <title>Booklogue</title>
 </head>
 <body>
-<?php include 'servers/header.php';
+<?php include 'headerEm.ph';
+require_once('db_credentials.php');
 require_once 'database.php'; ?>
 
 <?php 
 
-$data = data_connect();
+$data = db_connect();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $user = $_POST['username'];
     $pass = $_POST['password'];
     $sql = "INSERT INTO users (username, email, password) VALUES ('$user', '$email', '$pass')";
-    mysqli_query($data, $sql);
+    mysqli_query($db, $sql);
  }
 ?>
 
@@ -34,6 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     </div>
 
-    <?php include 'servers/footer.php';?> 
+    <?php include 'footerEM.php';?> 
 </body>
 </html>

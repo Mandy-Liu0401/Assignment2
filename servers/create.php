@@ -1,5 +1,4 @@
 <?php
-//test, hello
 require_once('db_credentials.php');
 require_once('database.php');
 include "headerEm.php";
