@@ -14,6 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $sql = "SELECT * FROM books WHERE ";
     $conditions = [];
 
+    //checks if the user has provided a value for each field in the search form. 
+    //If the field is not empty, it adds a condition to the $conditions array
     if (!empty($title)) {
         $conditions[] = "title LIKE '%$title%'";
     }
@@ -27,6 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     }
 
     if (!empty($conditions)) {
+        // implode function with " AND " as the separator. 
+        //This creates a valid SQL WHERE clause that includes all the conditions joined by "AND."
         $sql .= implode(" AND ", $conditions);
     } 
 
