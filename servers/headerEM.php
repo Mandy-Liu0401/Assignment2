@@ -15,7 +15,7 @@
 
         <nav>
                 <ul>
-                        <li><a href="<?php echo 'index.php'; ?>">My Books</a></li>
-                        <li><a href="<?php echo 'serachBook.php'; ?>">Sign up</a></li>
+                        <li><a href="<?php echo 'index.php'; ?>">My Collection</a></li>
+                        <li><a href="<?php echo 'searchBook.php'; ?>">Search Books</a></li>
                 </ul>
         </nav>
