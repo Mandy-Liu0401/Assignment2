@@ -43,13 +43,17 @@
                     <option value="history">History</option>
                     <option value="biography">Biography</option>
                 </select>
+                </div>
 
-
-                <label for="description" class="book-info">Enter Description</label>
+                <div class="book-info">
+                <label for="description" >Enter Description</label>
                 <input type="textarea" name="description" id="description" placeholder="Enter book description.">
+                </div>
 
-                <label for="comment" class="book-info">Comments</label>
+                <div class="book-info">
+                <label for="comment" >Comments</label>
                 <input type="textarea" name="comment" id="comment" placeholder="Enter your comments.">
+                </div>
 
                 <div class = "button">
                     <input type="submit" value="Create new book">
@@ -63,3 +67,5 @@
     </div>
 
     <?php include 'footerEm.php'; ?>
+</body>
+</html>

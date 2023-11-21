@@ -1,6 +1,7 @@
 let titleInput = document.getElementById('title');
 let authorInput = document.getElementById('author');
-let genreSelect = document.getElementById('genre');
+let descriptionInput =document.getElementById('description')
+
 let submitBut =document.getElementById('submit');
 
 
@@ -14,22 +15,27 @@ let authorError=document.createElement('p');
 authorError.setAttribute("class","error");
 document.querySelectorAll(".book-info")[1].append(authorError);
 
-let genreError=document.createElement('p');
-genreError.setAttribute("class","error");
-document.querySelectorAll(".book-info")[2].append(genreError);
+let descriptionError=document.createElement('p');
+descriptionError.setAttribute("class", "error");
+document.querySelectorAll(".book-info")[3].append(descriptionError);
+
+
+
 
 
 //error message
 let titleErrorMsg= "Title should be non-empty, and within 40 characters long.";
 let authorErrorMsg="Author should be non-empty, and within 30 characters long.";
-let genreErrorMsg="Please select the genre.";
+let descriptionErrorMsg = "Description can not be empty. ";
+
 let defaultMsg="";
 
 
 var validForm = false;
 var validTitle = false;
 var validAuthor = false;
-var validGenre =false;
+var validDescription=false;
+
  
 
 function validateTitle() {
@@ -49,28 +55,29 @@ function validateTitle() {
         let author=authorInput.value;
         if(author.length<30 && author.trim() !==""){
             authorError.textContent=defaultMsg;
-            var validAuthor = false;
+            validAuthor = false;
         }
         else{
             authorError.textContent=authorErrorMsg;
             validAuthor=true;
         }
     }
-
-    function validateGenre(){
-        let genre=genreSelect.value;
-        if(genre.trim() === ""){
-            genreError.textContent=genreErrorMsg;
-            validGenre=false;
+   
+    function validateDescription(){
+        let description=descriptionInput.value;
+        if(description.trim() !== ""){
+          descriptionError.textContent=defaultMsg;
+          validateDescription=false;
         }
         else{
-            genreError.textContent=defaultMsg;
-            validGenre= true;
+            descriptionError.textContent=descriptionErrorMsg;
+            validDescription=true;
         }
     }
+   
 
     function validateForm(){
-        if(validTitle == true && validAuthor==true && validGenre == true ){
+        if(validTitle == true && validAuthor==true && validDescription==true ){
           validForm=true;
         }
         else{
@@ -79,7 +86,7 @@ function validateTitle() {
     }
 
 function validate() {
-    alert("hello");
+    
     if (validForm == true) {
         return true;
     }
@@ -97,14 +104,15 @@ function submitForm(){
 function resetFormError() {
     titleError.textContent=defaultMSg;
     authorError.textContent=defaultMSg;
-    genreError.textContent=defaultMsg;
+    descriptionError.textContent=descriptionErrorMsg;
 }
  document.form.addEventListener("reset",resetFormError());
 
 
  titleInput.addEventListener("blur", validateTitle());
 authorInput.addEventListener("blur",validateAuthor());
-genreSelect.addEventListener("blur",validateGenre());
+descriptionInput.addEventListener("blur",validateDescription());
+
 
 
 document.form.reset().addEventListener("onclick", resetFormError());
