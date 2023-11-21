@@ -39,7 +39,7 @@
             <h2>Book Collection</h2>
 
             <div class="actions">
-                <a class="action" href="newBook.php">Add new book to your collection</a>
+                <a class="action" href="newBook.php">Add A New Book</a>
             </div>
 
             <table class="list">

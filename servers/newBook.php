@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" media="all" href="styles.css" />
+    <link rel="stylesheet" media="all" href="../styles.css" />
     <script src="scripts/script.js" defer></script>
 </head>
 
@@ -40,19 +40,18 @@
                     <option value="history">History</option>
                     <option value="biography">Biography</option>
                 </select>
-
-
-                <label for="description" class="book-info">Enter Description</label>
-                <input type="textarea" name="description" id="description" placeholder="Enter book description.">
-
-                <label for="comment" class="book-info">Comments</label>
-                <input type="textarea" name="comment" id="comment" placeholder="Enter your comments.">
-
-                <div class = "button">
-                    <input type="submit" value="Create new book">
-                    <input type="reset" value="Reset">
-                </div>
-            </form>
+            <br>
+            <label for="description" class="book-info">Enter Description</label>
+            <input type="textarea" name="description" id="description" ">
+            <br>
+            <label for="comment" class="book-info">Comments</label>
+            <textarea name="comment" id="comment" placeholder="Enter your comments." rows="3"></textarea>
+            <br>
+            <div class = "button">
+                <input type="submit" value="Create new book">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
 
 
         </div>

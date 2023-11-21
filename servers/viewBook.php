@@ -31,9 +31,7 @@
 
         <div class="container">
 
-            <h1>
-                <?php echo $result['title']; ?>  <!--output each  element by its key-->
-            </h1>
+            <h2>Book Details</h2>
 
             <div class="list">
                 <dl>
@@ -42,6 +40,7 @@
                         <?php echo $result['title']; ?>
                     </dd>
                 </dl>
+
                 <dl>
                     <dt>Author</dt>
                     <dd>

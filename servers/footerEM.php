@@ -8,7 +8,7 @@
     <body>
 
         <footer>
-            &copy; <?php echo date('Y'); ?> Book Cataloging System
+            &copy; <?php echo date('Y'); ?> Book Cataloging System Inc.
         </footer>
 
     </body>

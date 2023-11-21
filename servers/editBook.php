@@ -53,7 +53,7 @@
 
         <a class="back-link" href="index.php">&laquo; Back to book collection</a>
 
-        <div class="page edit">
+        <div class="page_edit">
 
             <h2>Edit Book Info</h2>
 

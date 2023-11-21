@@ -9,6 +9,8 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    color: #3D5360; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header h1 {
@@ -16,9 +18,7 @@ header h1 {
     line-height: 1.5em;
     padding: 5px;
     font-size: 200%;
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    color:#3D5360;
 }
 
 nav ul {
@@ -33,16 +33,96 @@ nav li {
 }
 
 nav a {
+    color:#3D5360;
     font-size: 120%;
     text-decoration: none; /* Remove underline from anchor links */
-    color: #3D5360; 
+}
+
+.actions a{
+    text-decoration: none;
+    margin-left: 30px;
+}
+.action{
+    border: 2px solid #3D5360;
+    text-align: center;
+    padding:3px;
+    color: #3D5360;
+}
+
+th{
+    font-size: 120%;
 }
 
 footer{
     font-size: 120%;
-    color: #3D5360; 
+    padding:20px;
+}
+
+.back-link{
+    color: #3D5360;
+    text-decoration: none;
+    padding-left: 20px;
+    align-self: flex-start;
+}
+nav a:hover,.back-link:hover{
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 h2{
+    padding: 5px 35px;
+    align-self: flex-start;
+}
 
+.list,.new_record, .page_edit,.page_delete, .container{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.list{
+    text-align: center;
+}
+
+form{
+    width:500px;
+    line-height: 1.5em;
+}
+
+label{
+    display: inline-block;
+    width: 200px; 
+    font-weight: bold;
+}
+
+dt {
+    font-size:120%;
+    width: 200px; 
+    font-weight: bold;
+    padding: 5px;
+}
+
+td,input,select,textarea {
+    height:2em;
+    width: 80%; 
+    box-sizing: border-box; 
+} 
+
+textarea{
+    height:300%}
+
+.button input{
+    font-size: 100%;
+    background-color: #3D5360;
+    color:#b7ccaf;
+    margin: 15px;
+    line-height:1em;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    width:9em;
 }
