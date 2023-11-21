@@ -1,6 +1,7 @@
 let titleInput = document.getElementById('title');
 let authorInput = document.getElementById('author');
 let genreSelect = document.getElementById('genre');
+let submitBut =document.getElementById('submit');
 
 
 
@@ -34,7 +35,7 @@ var validGenre =false;
 function validateTitle() {
     let title =titleInput.value;
     if(title.length< 40 && title.trim() !== ""){ 
-        titleError.textContent = defaultMSg
+        titleError.textContent = defaultMsg;
     }
         else {
      titleError.textContent = titleErrorMsg;
@@ -65,6 +66,9 @@ function validateTitle() {
             validGenre= true;
         }
     }
+
+    document.submitBut.addEventListener('click',validateForm());
+    
 
     function validateForm(){
         if(validTitle == true && validAuthor==true && validGenre == true ){

@@ -21,11 +21,11 @@
             <form name="form" action='create.php' method="POST" onsubmit="return validate()">
 
             <label for="title" class="book-info">Title</label>
-            <input type="text" name="title" id="title" />
+            <input type="text" name="title" id="title" placeholder="Enter title here."/>
             <br>
 
             <label for="author" class="book-info">Author</label>
-            <input type="text" name="author" id="author" /> 
+            <input type="text" name="author" id="author" placeholder="Enter author name."/> 
             <br>
             
             <label for="genre" class="book-info">Select Genre</label>
@@ -49,7 +49,7 @@
                 <input type="textarea" name="comment" id="comment" placeholder="Enter your comments.">
 
                 <div class = "button">
-                    <input type="submit" value="Create new book">
+                    <input type="submit" id="submit" value="Create new book">
                     <input type="reset" value="Reset">
                 </div>
             </form>
