@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" media="all" href="styles.css" />
+    <script src="scripts/script.js" defer></script>
 </head>
 
 <body>
@@ -17,17 +18,17 @@
 
             <h2>Add new book to the collection</h2>
 
-            <form action='create.php' method="POST">
+            <form name="form" action='create.php' method="POST" onsubmit="return validate()">
 
-            <label for="title" class="aaa">Title</label>
-            <input type="text" name="title" />
+            <label for="title" class="book-info">Title</label>
+            <input type="text" name="title" id="title" />
             <br>
 
-            <label for="author" class="aaa">Author</label>
-            <input type="text" name="author" /> 
+            <label for="author" class="book-info">Author</label>
+            <input type="text" name="author" id="author" /> 
             <br>
             
-            <label for="genre" class="aaa">Select Genre</label>
+            <label for="genre" class="book-info">Select Genre</label>
                 <select name="genre" id="genre">
                     <option value="nonFiction" selected>Non-fiction</option>
                     <option value="childrens">Children's Book</option>
@@ -41,10 +42,10 @@
                 </select>
 
 
-                <label for="description" class="aaa">Enter Description</label>
+                <label for="description" class="book-info">Enter Description</label>
                 <input type="textarea" name="description" id="description" placeholder="Enter book description.">
 
-                <label for="comment" class="aaa">Comments</label>
+                <label for="comment" class="book-info">Comments</label>
                 <input type="textarea" name="comment" id="comment" placeholder="Enter your comments.">
 
                 <div class = "button">

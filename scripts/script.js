@@ -1,116 +1,122 @@
-
-
-let emailInput = document.getElementById('email');
-let loginInput = document.getElementById('username');
-let passInput = document.getElementById('password');
-let pass2Input = document.getElementById('confirm');
-let registerClick = document.getElementById('register');
-
-//create space p for error message
-let emailError=document.createElement('p');
-emailError.setAttribute("class","error");
-document.querySelectorAll(".regItem")[0].append(emailError);
-
-let usernameError=document.createElement('p');
-usernameError.setAttribute("class","error");
-document.querySelectorAll(".regItem")[0].append(usernameError);
-
-let passError=document.createElement('p');
-passError.setAttribute("class","error");
-document.querySelectorAll(".regItem")[2].append(passError);
-
-let pass2Error=document.createElement('p');
-pass2Error.setAttribute("class","error");
-document.querySelectorAll(".regItem")[3].append(pass2Error);
+let titleInput = document.getElementById('title');
+let authorInput = document.getElementById('author');
+let genreSelect = document.getElementById('genre');
 
 
 
-//error messages
-let emailErrorMsg="Email address should be non-empty with format xyz@xyz.xyz.";
-let loginErrorMsg="User name should be non-empty, and within 30 characters long."
-let passErrorMsg="Password should be at least 7 characters 1 uppercase 1 lowercase."
-let pass2ErrorMsg="Please retype password."
-let defaultMSg="";
+// create p element for error display
+let titleError=document.createElement('p');
+titleError.setAttribute("class","error");
+document.querySelectorAll(".book-info")[0].append(titleError);
+
+let authorError=document.createElement('p');
+authorError.setAttribute("class","error");
+document.querySelectorAll(".book-info")[1].append(authorError);
+
+let genreError=document.createElement('p');
+genreError.setAttribute("class","error");
+document.querySelectorAll(".book-info")[2].append(genreError);
 
 
-
-
+//error message
+let titleErrorMsg= "Title should be non-empty, and within 40 characters long.";
+let authorErrorMsg="Author should be non-empty, and within 30 characters long.";
+let genreErrorMsg="Please select the genre.";
+let defaultMsg="";
 
 
 var validForm = false;
-
 var validEmail = false;
-let emailPattern = /\S+@\S+\.\S+/;
-
+let emailPattern = /^[a-zA-Z0-9\._-]+@{1}[a-zA-Z]+\.{1}[a-zA-Z]+$/;
 var validLogin = false;
 let loginPattern = /^[a-zA-Z0-9]{1,40}$/i;
-
-
-//passPattern needs to be changed !!!!!
 var validPass = false;
 let passPattern = /^[a-zA-Z0-9]{4,}$/;
-
 var validPass2 = false;
 
+function hasLowerCase(str) {
+    return str !== str.toUpperCase();
+}
 
-//eg needs deleted 
-
-
-
-
+function hasUpperCase(str) {
+    return str !== str.toLowerCase();
+}
 
 function validateEmail() {
-let email =emailInput.value;
-if(emailPattern.test(email)){ 
-    emailError.textContent = defaultMSg
-}
-    else {
-    emailError.textContent = emailErrorMsg;}
-   
-}
+    let result = emailPattern.test(email.value);
+    var emailError = document.getElementById("emailError");
 
+    if (result == false) {
+        validEmail = false;
+        email.style.border = "solid 1px red";
+        emailError.style.visibility = "visible";
+    }
 
-function validateLogin() {
-    let login = loginInput.value;
-    if(login.length > 0 && login.length <= 30){
-        loginError.textContent=defaultMSg;
-        loginInput.value = login.toLowerCase();
-    }else{
-        loginError.textContent=loginErrorMsg;
+    if (result == true) {
+        validEmail = true;
+        email.style.border = "solid 1px black";
+        emailError.style.visibility = "hidden";
     }
 }
 
+function validateLogin() {
+    let result = loginPattern.test(login.value);
+    var lowerLogin = login.value.toLowerCase();
+    var loginError = document.getElementById("usernameError");
 
-//these codes need to be review for algorithm test
+    if (result == false || hasUpperCase(lowerLogin) == true) {
+        validLogin = false;
+        login.style.border = "solid 1px red";
+        loginError.style.visibility = "visible";
+    }
+
+    if (result == true && hasUpperCase(lowerLogin) == false) {
+        validLogin = true;
+        login.style.border = "solid 1px black";
+        loginError.style.visibility = "hidden";
+    }
+}
+
 function validatePass() {
-let result = passPattern.test(passInput.value);
+    let result = passPattern.test(pass.value);
+    var passError = document.getElementById("passwordError");
 
-if (result.length > 8 ||result == false || hasLowerCase(passInput.value) == false || hasUpperCase(passInput.value) == false) {
-    validPass = false;
-    passError.textContent=passErrorMsg;
+    if (result == false || hasLowerCase(pass.value) == false || hasUpperCase(pass.value) == false) {
+        validPass = false;
+        pass.style.border = "solid 1px red";
+        passError.style.visibility = "visible";
+    }
+
+    if (result == true && hasLowerCase(pass.value) == true && hasUpperCase(pass.value) == true) {
+        validPass = true;
+        pass.style.border = "solid 1px black";
+        passError.style.visibility = "hidden";
+    }
 }
 
-if (result == true && hasLowerCase(passInput.value) == true && hasUpperCase(passInput.value) == true) {
-    validPass = true;
-    passError.textContent=defaultMSg;
-}
-
-}
-//same, needs to be check 
 function validatePass2() {
-    
-    if (passInput.value !== pass2Input.value) {
+    var confirmError = document.getElementById("confirmError");
+
+    if (pass.value !== pass2.value) {
         validPass2 = false;
-        pass2Error.textContent=pass2ErrorMsg;
+        pass2.style.border = "solid 1px red";
+        confirmError.style.visibility = "visible";
     }
 
     if (pass.value === pass2.value) {
         validPass2 = true;
-        pass2Error.textContent=defaultMSg;
+        pass2.style.border = "solid 1px black";
+        confirmError.style.visibility = "hidden";
     }
 
 }
 
+email.addEventListener("keyup", validateEmail);
+login.addEventListener("keyup", validateLogin);
+pass.addEventListener("keyup", validatePass);
+pass2.addEventListener("keyup", validatePass2);
+
+register.addEventListener("click", validateForm);
 
 function validateForm() {
     if (validEmail == true && validLogin == true && validPass == true && validPass2 == true) {
@@ -131,20 +137,3 @@ function validate() {
         return false
     }
 }
-
-
-
-
-
-
-
-
-//event listeners as below 
-emailInput.addEventListener("blur", validateEmail());
-loginInput.addEventListener("blur", validateLogin());
-passInput.addEventListener("blur", validatePass());
-pass2Input.addEventListener("blur", validatePass2());
-
-registerClick.addEventListener("click", validateForm());
-
-
