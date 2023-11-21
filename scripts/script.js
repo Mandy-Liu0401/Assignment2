@@ -35,7 +35,7 @@ var validGenre =false;
 function validateTitle() {
     let title =titleInput.value;
     if(title.length< 40 && title.trim() !== ""){ 
-        titleError.textContent = defaultMsg;
+        titleError.textContent = defaultMSg
     }
         else {
      titleError.textContent = titleErrorMsg;
@@ -67,9 +67,6 @@ function validateTitle() {
         }
     }
 
-    document.submitBut.addEventListener('click',validateForm());
-    
-
     function validateForm(){
         if(validTitle == true && validAuthor==true && validGenre == true ){
           validForm=true;
@@ -79,30 +76,12 @@ function validateTitle() {
         }
     }
 
-    function validate(){
-        if (validForm == true) {
-            return true;
-        }
-    
-        else {
-            return false
-        }
+function validate() {
+    if (validForm == true) {
+        return true;
     }
 
-
-    function reserFormError() {
-        titleError.textContent=defaultMSg;
-        authorError.textContent=defaultMSg;
-        genreError.textContent=defaultMsg;
+    else {
+        return false
     }
-     document.form.addEventListener("reset",reserFormError());
-    
-
-    titleInput.addEventListener("blur",validTitle());
-    authorInput.addEventListener("blur",validAuthor());
-    genreSelect.addEventListener("blur",validGenre());
-
-
-
-
-
+}
