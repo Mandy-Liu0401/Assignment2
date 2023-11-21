@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- footer -->
+        <title>Book Cataloging System</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" media="all" href="<?php echo '../styles.css'; ?>" />
 </head>
     <body>
 

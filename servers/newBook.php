@@ -10,7 +10,7 @@
 
     <?php include 'headerEm.php'; ?>
 
-    <div id="content">
+    <div class="content">
 
         <a class="back-link" href="index.php">&laquo; Back to book collection</a>
 
