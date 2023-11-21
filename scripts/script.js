@@ -35,19 +35,21 @@ var validGenre =false;
 function validateTitle() {
     let title =titleInput.value;
     if(title.length< 40 && title.trim() !== ""){ 
-        titleError.textContent = defaultMSg
+        titleError.textContent = defaultMsg;
+        var validTitle = false;
     }
-        else {
+    else {
      titleError.textContent = titleErrorMsg;
      validTitle=true;
     }
        
     }
 
-    function validAuthor(){
+    function validateAuthor(){
         let author=authorInput.value;
         if(author.length<30 && author.trim() !==""){
             authorError.textContent=defaultMsg;
+            var validAuthor = false;
         }
         else{
             authorError.textContent=authorErrorMsg;
@@ -55,7 +57,7 @@ function validateTitle() {
         }
     }
 
-    function validGenre(){
+    function validateGenre(){
         let genre=genreSelect.value;
         if(genre.trim() === ""){
             genreError.textContent=genreErrorMsg;
@@ -77,6 +79,7 @@ function validateTitle() {
     }
 
 function validate() {
+    alert("hello");
     if (validForm == true) {
         return true;
     }
@@ -85,3 +88,25 @@ function validate() {
         return false
     }
 }
+
+function submitForm(){
+    document.form.submit();
+    document.form.reset();
+}
+
+function resetFormError() {
+    titleError.textContent=defaultMSg;
+    authorError.textContent=defaultMSg;
+    genreError.textContent=defaultMsg;
+}
+ document.form.addEventListener("reset",resetFormError());
+
+
+ titleInput.addEventListener("blur", validateTitle());
+authorInput.addEventListener("blur",validateAuthor());
+genreSelect.addEventListener("blur",validateGenre());
+
+
+document.form.reset().addEventListener("onclick", resetFormError());
+document.form.submit().addEventListener("onclick",submitForm());
+

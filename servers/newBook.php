@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" media="all" href="styles.css" />
-    <script src="scripts/script.js" defer></script>
+    <link rel="stylesheet" media="all" href="../styles.css" />
+    <script type="text/javascript" src="../scripts/script.js" defer></script>
 </head>
 
 <body>
@@ -20,15 +20,18 @@
 
             <form name="form" action='create.php' method="POST" onsubmit="return validate()">
 
-            <label for="title" class="book-info">Title</label>
+            <div class="book-info">
+            <label for="title" >Title</label>
             <input type="text" name="title" id="title" placeholder="Enter title here."/>
-            <br>
-
-            <label for="author" class="book-info">Author</label>
+            </div>
+             
+            <div class="book-info">
+            <label for="author" >Author</label>
             <input type="text" name="author" id="author" placeholder="Enter author name."/> 
-            <br>
-            
-            <label for="genre" class="book-info">Select Genre</label>
+            </div>
+
+            <div class="book-info">
+            <label for="genre" >Select Genre</label>
                 <select name="genre" id="genre">
                     <option value="nonFiction" selected>Non-fiction</option>
                     <option value="childrens">Children's Book</option>
@@ -40,17 +43,21 @@
                     <option value="history">History</option>
                     <option value="biography">Biography</option>
                 </select>
+               </div>
 
-
-                <label for="description" class="book-info">Enter Description</label>
+               <div class="book-info">
+                <label for="description" >Enter Description</label>
                 <input type="textarea" name="description" id="description" placeholder="Enter book description.">
+               </div>
 
-                <label for="comment" class="book-info">Comments</label>
-                <input type="textarea" name="comment" id="comment" placeholder="Enter your comments.">
+                <div class="book-info">
+                   <label for="comment" >Comments</label>
+                   <input type="textarea" name="comment" id="comment" placeholder="Enter your comments.">
+                </div>
 
                 <div class = "button">
                     <input type="submit" id="submit" value="Create new book">
-                    <input type="reset" value="Reset">
+                    <input type="reset" id="reset" value="Reset">
                 </div>
             </form>
 
