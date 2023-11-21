@@ -5,7 +5,7 @@
 <head>
         <title>Book Cataloging System</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" media="all" href="<?php echo 'styles.css'; ?>" />
+        <link rel="stylesheet" media="all" href="<?php echo '../styles.css'; ?>" />
 </head>
 
 <body>

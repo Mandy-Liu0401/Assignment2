@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
 </head>
 
 <body>
@@ -25,23 +25,22 @@
     
     ?>
 
-    <div id="content">
+    <div class="content">
 
         <a class="back-link" href="index.php">&laquo; Back to book collection</a>
 
-        <div class="page show">
+        <div class="container">
 
-            <h1>
-                <?php echo $result['title']; ?>  <!--output each  element by its key-->
-            </h1>
+            <h2>Book Details</h2>
 
-            <div class="attributes">
+            <div class="list">
                 <dl>
                     <dt>Title</dt>
                     <dd>
                         <?php echo $result['title']; ?>
                     </dd>
                 </dl>
+
                 <dl>
                     <dt>Author</dt>
                     <dd>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" media="all" href="styles.css" />
+    <link rel="stylesheet" media="all" href="../styles.css" />
 </head>
 
 <body>
@@ -39,22 +39,27 @@
     <?php $page_title = 'Delete Book'; ?>
 
 
-    <div id="content">
+    <div class="content">
 
         <a class="back-link" href="index.php">&laquo; Back to book collection</a>
 
-        <div class="page delete">
+        <div class="page_delete">
             <h2>Delete the Book</h2>
             <p>Are you sure you want to delete this book?</p>
             <p class="item">
                 <?php echo $result['title']; ?>
             </p>
 
-            <form form action="<?php echo 'deleteBook.php?id=' . $result['id']; ?>" method="post">
-                <div class="Button">
-                    <input type="submit" name="commit" value="Delete Book" />
+            <form action="<?php echo 'deleteBook.php?id=' . $result['id']; ?>" method="post">
+                <div class="button">
+                    <input form action="<?php echo 'deleteBook.php?id=' . $rpe="submit" name="commit" value="Delete Book" />
+                    <input type="button" value="Cancel" onclick="window.location.href='index.php';" />
                 </div>
             </form>
         </div>
         <?php include 'footerEm.php'; ?>
     </div>
+
+    </body>
+
+</html>

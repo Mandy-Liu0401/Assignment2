@@ -1,138 +1,128 @@
-header {
-  font-size: 17px;
-  background-image: linear-gradient(#e89f72, #d01e1e);
-  background-color: #cf8181;
-  text-align: center;
-  border-style: double;
-  border-radius: 15px;
-  width: auto;
-  height: auto;
-  padding-top: 0%;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-a {
-  text-decoration: none;
-  padding: 5px 5px 20px 5px;
-}
-
-footer {
-  font-size: 15px;
-  padding: 10px;
-  background-image: linear-gradient(#e89f72, #d01e1e);
-  background-color: #cf8181;
-  text-align: right;
-  border-style: double;
-  border-radius: 15px;
-  width: auto;
-  height: auto;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+html {
+    height: 100%;
+    width: 100%;
+    background-color: #b7ccaf;
 }
 
 body {
-  font-family: 'Times New Roman', Times, serif;
-  background: linear-gradient(#da7777, #1d0fba);
-  color: antiquewhite;
+    height: 980px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #3D5360; 
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.container {
-  display: block;
-  font-size: 15px;
-  margin: 1% 20%;
-  padding: 10px;
-  text-align: center;
-  color: antiquewhite;
-  font-family: 'Times New Roman', Times, serif
-}
-
-.regItem {
-  padding: 3px;
-  margin: 0px 50px;
-  display: grid;
-  grid-template-areas: "label"
-      "input";
-}
-
-@media only screen and (max-width: 1000px) {
-  .container {
-    display: block;
-    font-size: 15px;
-    margin: 1% 10%;
-    padding: 10px;
+header h1 {
+    font-weight: 600;
+    line-height: 1.5em;
+    padding: 5px;
+    font-size: 200%;
     text-align: center;
-    color: antiquewhite;
-    font-family: 'Times New Roman', Times, serif
-  }
 }
-  
 
-
-@media only screen and (max-width: 768px) {
-  .container {
-    display: block;
-    font-size: 15px;
-    margin: 1% 5%;
-    padding: 10px;
+nav ul {
+    list-style: none;
     text-align: center;
-    color: antiquewhite;
-    font-family: 'Times New Roman', Times, serif
-  }
+    
+}
 
-  .regItem {
-    padding: 3px;
-    margin: 0px 2px;
-    display: grid;
-    grid-template-areas: "label"
-      "input";
-  }
+nav li {
+    display: inline-block; /* Display list items in a horizontal line */
+    margin-right: 5vw; /* Add some spacing between list items */
+}
 
-  nav {
-    display: flex;
-  }
+nav a {
+    color:#3D5360;
+    font-size: 120%;
+    text-decoration: none; /* Remove underline from anchor links */
+}
+
+.actions a{
+    text-decoration: none;
+    margin-left: 30px;
+}
+.action{
+    border: 2px solid #3D5360;
+    text-align: center;
+    padding:3px;
+    color: #3D5360;
+}
+
+th{
+    font-size: 120%;
+}
+
+footer{
+    font-size: 120%;
+    padding:20px;
+}
+
+.back-link{
+    color: #3D5360;
+    text-decoration: none;
+    padding-left: 20px;
+    align-self: flex-start;
+}
+nav a:hover,.back-link:hover{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+h2{
+    padding: 5px 35px;
+    align-self: flex-start;
+}
+
+.list,.new_record, .page_edit,.page_delete, .container{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
 }
 
-
-label {
-  grid-area: label;
-  padding: 3px;
+.list{
+    text-align: center;
 }
 
-input {
-  grid-area: input;
-  padding: 3px;
-  border: solid 1px black;
-  text-align: center;
+form{
+    width:500px;
+    line-height: 1.5em;
 }
 
-.aaa {
-  padding-right: auto;
-  position: relative;
-  padding-inline: 9%;
-  padding: 10px;
-
+label{
+    display: inline-block;
+    width: 200px; 
+    font-weight: bold;
 }
 
-.error {
-  visibility: hidden;
-  color: #f95454;
-  padding: 5px;
+dt {
+    font-size:120%;
+    width: 200px; 
+    font-weight: bold;
+    padding: 5px;
 }
 
-.mediaGenre {
-  visibility: hidden;
-}
+td,input,select,textarea {
+    height:2em;
+    width: 80%; 
+    box-sizing: border-box; 
+} 
 
+textarea{
+    height:300%}
 
-button {
-  background-color: #cf8181;
-  color: white;
-  padding: 10px 34px;
-  margin: 5%;
-  bottom: 10;
-  font-size: 14px;
+.button input{
+    font-size: 100%;
+    background-color: #3D5360;
+    color:#b7ccaf;
+    margin: 15px;
+    line-height:1em;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-radius: 15px;
+    width:9em;
 }

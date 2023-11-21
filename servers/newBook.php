@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" media="all" href="../styles.css" />
-    <script type="text/javascript" src="../scripts/script.js" defer></script>
+    <link rel="stylesheet" media="all" href="styles.css" />
+    <script src="scripts/script.js" defer></script>
 </head>
 
 <body>
 
     <?php include 'headerEm.php'; ?>
 
-    <div id="content">
+    <div class="content">
 
         <a class="back-link" href="index.php">&laquo; Back to book collection</a>
 
@@ -43,21 +43,17 @@
                     <option value="history">History</option>
                     <option value="biography">Biography</option>
                 </select>
-               </div>
 
-               <div class="book-info">
-                <label for="description" >Enter Description</label>
+
+                <label for="description" class="book-info">Enter Description</label>
                 <input type="textarea" name="description" id="description" placeholder="Enter book description.">
-               </div>
 
-                <div class="book-info">
-                   <label for="comment" >Comments</label>
-                   <input type="textarea" name="comment" id="comment" placeholder="Enter your comments.">
-                </div>
+                <label for="comment" class="book-info">Comments</label>
+                <input type="textarea" name="comment" id="comment" placeholder="Enter your comments.">
 
                 <div class = "button">
-                    <input type="submit" id="submit" value="Create new book">
-                    <input type="reset" id="reset" value="Reset">
+                    <input type="submit" value="Create new book">
+                    <input type="reset" value="Reset">
                 </div>
             </form>
 
