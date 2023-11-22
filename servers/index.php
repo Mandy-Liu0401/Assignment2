@@ -20,13 +20,13 @@
     require_once('database.php');
 
     $db = db_connect();
-    //$page_title = 'Employee'; ?>
+    ?>
 
 
     <?php
 
     $sql = "SELECT * FROM books ";
-    $sql .= "ORDER BY title ASC";
+    $sql .= "ORDER BY id ASC";
     //echo $sql;
     $result_set = mysqli_query($db, $sql);
 
@@ -48,8 +48,8 @@
                     <th>Title</th>
                     <th>Author</th>
                     <th >Genre</th>
-                    <th colspan="4">Description</th>
-                    <th colspan="4">Comment</th>
+                    <th >Description</th>
+                    <th >Comment</th>
                     <th>&nbsp</th>
                     <th>&nbsp</th>
                     <th>&nbsp</th>
@@ -69,10 +69,10 @@
                         <td>
                             <?php echo $results['genre']; ?>
                         </td>
-                        <td colspan="4">
+                        <td >
                             <?php echo $results['description']; ?>
                         </td>
-                        <td colspan="4">
+                        <td >
                             <?php echo $results['comment']; ?>
                         </td>
 

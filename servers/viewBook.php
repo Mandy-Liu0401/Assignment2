@@ -33,7 +33,7 @@
 
             <h2>Book Details</h2>
 
-            <div class="list">
+            <div class="view_list">
                 <dl>
                     <dt>Title</dt>
                     <dd>

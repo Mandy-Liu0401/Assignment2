@@ -56,7 +56,7 @@
                 </div>
 
                 <div class = "button">
-                    <input type="submit" value="Create new book">
+                    <input id= "new" type="submit" value="Create new book">
                     <input type="reset" value="Reset">
                 </div>
             </form>
