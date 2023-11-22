@@ -21,7 +21,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $sql = "DELETE FROM books WHERE id ='$id'";
-        $result = mysqli_query($db, $sql);
+        $result_set = mysqli_query($db, $sql);
 
         header("Location: index.php");
 
@@ -44,16 +44,17 @@
         <a class="back-link" href="index.php">&laquo; Back to book collection</a>
 
         <div class="page_delete">
-            <h2>Delete the Book</h2>
+            <h2>Delete The Book</h2>
             <p>Are you sure you want to delete this book?</p>
             <p class="item">
-                <?php echo $result['title']; ?>
+                Title: <?php echo $result['title']; ?> by
+                Author: <?php echo $result['author']; ?>
             </p>
 
-            <form action="<?php echo 'deleteBook.php?id=' . $result['id']; ?>" method="post">
+            <form form action="<?php echo 'deleteBook.php?id=' . $result['id']; ?>" method="post">
                 <div class="button">
-                    <input form action="<?php echo 'deleteBook.php?id=' . $rpe="submit" name="commit" value="Delete Book" />
-                    <input type="button" value="Cancel" onclick="window.location.href='index.php';" />
+                <input type="submit" name="commit" value="Delete Book" />                    
+                <input type="button" value="Cancel" onclick="window.location.href='index.php';" />
                 </div>
             </form>
         </div>

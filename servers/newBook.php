@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" media="all" href="styles.css" />
+<link rel="stylesheet" type="text/css" href="../styles.css">
     <script src="scripts/script.js" defer></script>
 </head>
 
@@ -24,7 +24,7 @@
             <label for="title" >Title</label>
             <input type="text" name="title" id="title" placeholder="Enter title here."/>
             </div>
-             
+            
             <div class="book-info">
             <label for="author" >Author</label>
             <input type="text" name="author" id="author" placeholder="Enter author name."/> 

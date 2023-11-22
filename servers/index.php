@@ -47,9 +47,9 @@
                     <th>ID</th>
                     <th>Title</th>
                     <th>Author</th>
-                    <th>Genre</th>
-                    <th>Description</th>
-                    <th>Comment</th>
+                    <th >Genre</th>
+                    <th colspan="4">Description</th>
+                    <th colspan="4">Comment</th>
                     <th>&nbsp</th>
                     <th>&nbsp</th>
                     <th>&nbsp</th>
@@ -69,10 +69,10 @@
                         <td>
                             <?php echo $results['genre']; ?>
                         </td>
-                        <td>
+                        <td colspan="4">
                             <?php echo $results['description']; ?>
                         </td>
-                        <td>
+                        <td colspan="4">
                             <?php echo $results['comment']; ?>
                         </td>
 
