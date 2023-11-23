@@ -102,8 +102,8 @@
                 </dl>
 
                 <div class = "button">
-                        <input type="submit" value="Edit Book">
-                        <input type="reset" value="Reset">
+                        <button id ="submit" type="submit">Comfirm Update</button>
+                        <input type="button" value="Cancel" onclick="window.location.href='index.php';" />
                     </div>
             </form>
 

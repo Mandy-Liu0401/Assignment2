@@ -55,8 +55,9 @@
                 <dd><?php echo $result['comment']; ?></dd>
                 </dl>
             </div>
-
-
+            <div class="button">
+                <input type="button" value="Back to My List" onclick="window.location.href='index.php';" />
+            </div>
         </div>
 
     </div>
