@@ -45,10 +45,10 @@
 
         <div class="page_delete">
             <h2>Delete The Book</h2>
-            <p>Are you sure you want to delete this book?</p>
-            <p class="item">
-                Title: <?php echo $result['title']; ?> by
-                Author: <?php echo $result['author']; ?>
+            <p class="item">Are you sure you want to delete this book?</p>
+            <p class="item"><em>
+                <?php echo $result['title']; ?> by
+                <?php echo $result['author']; ?></em>
             </p>
 
             <form form action="<?php echo 'deleteBook.php?id=' . $result['id']; ?>" method="post">

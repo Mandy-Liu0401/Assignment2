@@ -58,34 +58,32 @@
 
     <!-- Display the search results -->
     <div id="content">
-
         <a class="back-link" href="index.php">&laquo; Back to book collection</a>
-        
-            <h2>Search Results</h2>
-            <div class="attributes">
-                <table class ="list">
-                    <!-- Table header -->
-                    <tr>
-                            <th>ID</th>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Genre</th>
-                            <th>Description</th>
-                            <th>Comment</th>
-                    </tr>
-                    <?php while ($results = mysqli_fetch_assoc($result_set)) { ?>
-                        <!-- Display each book row -->
-                        <tr>
-                            <td><?php echo $results['id']; ?></td>
-                            <td><?php echo $results['title']; ?></td>
-                            <td><?php echo $results['author']; ?></td>
-                            <td><?php echo $results['genre']; ?></td>
-                            <td><?php echo $results['description']; ?></td>
-                            <td><?php echo $results['comment']; ?></td>
-                        </tr>
-                    <?php } ?>
-                </table>
-            </div>
+        <h2>Search Results</h2>
+        <div class="attributes">
+            <table class ="view_list">
+                <!-- Table header -->
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Description</th>
+                    <th>Comment</th>
+                </tr>
+                <?php while ($results = mysqli_fetch_assoc($result_set)) { ?>
+                    <!-- Display each book row -->
+                <tr>
+                    <td><?php echo $results['id']; ?></td>
+                    <td><?php echo $results['title']; ?></td>
+                    <td><?php echo $results['author']; ?></td>
+                    <td><?php echo $results['genre']; ?></td>
+                    <td><?php echo $results['description']; ?></td>
+                    <td><?php echo $results['comment']; ?></td>
+                </tr>
+                <?php } ?>
+            </table>
+        </div>
     </div>
 
     <?php include('footerEM.php'); ?>

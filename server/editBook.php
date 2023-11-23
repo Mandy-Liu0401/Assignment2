@@ -66,17 +66,17 @@
                 </dl>
                 <dl>
                     <dt>Title</dt>
-                    <dd><input class="short type="text" name="title" value="<?php echo $result['title']; ?>" /></dd>
+                    <dd><input class="short" type="text" name="title" value="<?php echo $result['title']; ?>" /></dd>
                 </dl>
                 <dl>
                     <dt>Author</dt>
-                    <dd><input class="short type="text" name="author" value="<?php echo $result['author']; ?>" /></dd>
+                    <dd><input class="short" type="text" name="author" value="<?php echo $result['author']; ?>" /></dd>
                 </dd>
                 </dl>
                 <dl>
                     <dt>Book Genre</dt>
                     <dd>
-                        <select class="short" name="genre" id="genre" >
+                        <select class="dropdown" name="genre" id="genre" >
                         <!-- using the ternary operator (? :) to conditionally output the string 'selected' 
                         if the value of $result['genre'] is equal to 'biography', 
                         otherwise, it outputs an empty string. -->

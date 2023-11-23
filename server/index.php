@@ -69,12 +69,12 @@
 
         <table class="list">
             <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Author</th>
+                <th>&nbsp</th>
+                <th colspan=2>Title</th>
+                <th colspan=2>Author</th>
                 <th>Genre</th>
-                <th>Description</th>
-                <th>Comment</th>
+                <th colspan=2>Description</th>
+                <th colspan=2>Comment</th>
                 <th>&nbsp</th>
                 <th>&nbsp</th>
                 <th>&nbsp</th>
@@ -83,28 +83,20 @@
             <!-- Display each book row -->
             <?php while ($results = mysqli_fetch_assoc($result_set)) { ?>
                 <tr>
-                    <td>
-                        <?php echo $results['id']; ?>
-                    </td>
-                    <td>
-                        <?php echo $results['title']; ?>
-                    </td>
-                    <td>
-                        <?php echo $results['author']; ?>
-                    </td>
-                    <td>
-                        <?php echo $results['genre']; ?>
-                    </td>
-                    <td>
-                        <?php echo $results['description']; ?>
-                    </td>
-                    <td>
-                        <?php echo $results['comment']; ?>
-                    </td>
-
+                    <!-- Insert image with dynamic source -->
+                    <td ><img src="<?php echo '../images/' . $results['id'] . '.jpg'; ?>" alt="Book Image" width="120" height="180"></td>
+                    <td><?php echo $results['title']; ?></td>
+                    <td>&nbsp</td>
+                    <td><?php echo $results['author']; ?></td>
+                    <td>&nbsp</td>
+                    <td><?php echo $results['genre']; ?></td>
+                    <td class="longText"><?php echo $results['description']; ?></td>
+                    <td>&nbsp</td>
+                    <td class="longText"><?php echo $results['comment']; ?></td>
+                    <td>&nbsp</td>
                     <td><a class="action" href="<?php echo "viewBook.php?id=" . $results['id']; ?>">View</a></td>
                     <td><a class="action" href="<?php echo "editBook.php?id=" . $results['id']; ?>">Edit</a></td>
-                    <td><a class="action" href=<?php echo "deleteBook.php?id=" . $results['id']; ?>">delete</a></td>
+                    <td><a class="action" href=<?php echo "deleteBook.php?id=" . $results['id']; ?>">Delete</a></td>
             </tr>
             <?php } ?>
         </table>
