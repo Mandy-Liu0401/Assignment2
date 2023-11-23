@@ -29,41 +29,30 @@
 
         <a class="back-link" href="index.php">&laquo; Back to book collection</a>
 
-        <div class="container">
+        <div class="page_view">
 
             <h2>Book Details</h2>
 
             <div class="view_list">
                 <dl>
                     <dt>Title</dt>
-                    <dd>
-                        <?php echo $result['title']; ?>
-                    </dd>
+                    <dd><?php echo $result['title']; ?></dd>
                 </dl>
 
-                <dl>
-                    <dt>Author</dt>
-                    <dd>
-                        <?php echo $result['author']; ?>
-                    </dd>
+                <dl><dt>Author</dt>
+                    <dd><?php echo $result['author']; ?></dd>
                 </dl>
                 <dl>
                     <dt>Book Genre</dt>
-                    <dd>
-                        <?php echo $result['genre']; ?>
-                    </dd>
+                    <dd ><?php echo $result['genre']; ?></dd>
                 </dl>
                 <dl>
                 <dt>Description</dt>
-                    <dd>
-                        <?php echo $result['description']; ?>
-                    </dd>
+                    <dd><?php echo $result['description']; ?></dd>
                 </dl>
                 <dl>
                 <dt>Comment</dt>
-                    <dd>
-                        <?php echo $result['comment']; ?>
-                    </dd>
+                <dd><?php echo $result['comment']; ?></dd>
                 </dl>
             </div>
 

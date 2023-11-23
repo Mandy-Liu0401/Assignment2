@@ -22,17 +22,17 @@
 
             <div class="book-info">
             <label for="title" >Title</label>
-            <input type="text" name="title" id="title" placeholder="Enter title here."/>
+            <input class= "short" type="text" name="title" id="title" />
             </div>
             
             <div class="book-info">
             <label for="author" >Author</label>
-            <input type="text" name="author" id="author" placeholder="Enter author name."/> 
+            <input class= "short" type="text" name="author" id="author" /> 
             </div>
 
             <div class="book-info">
             <label for="genre" >Select Genre</label>
-                <select name="genre" id="genre">
+                <select class= "short" name="genre" id="genre">
                     <option value="nonFiction" selected>Non-fiction</option>
                     <option value="childrens">Children's Book</option>
                     <option value="fantasy">Fantasy</option>
@@ -47,12 +47,12 @@
 
                 <div class="book-info">
                 <label for="description" >Enter Description</label>
-                <input type="textarea" name="description" id="description" placeholder="Enter book description.">
+                <textarea class="tall" name="description" id="description" placeholder="Enter book description."></textarea>
                 </div>
 
                 <div class="book-info">
                 <label for="comment" >Comments</label>
-                <input type="textarea" name="comment" id="comment" placeholder="Enter your comments.">
+                <textarea class="tall" name="comment" id="comment" placeholder="Enter your comments."></textarea>
                 </div>
 
                 <div class = "button">

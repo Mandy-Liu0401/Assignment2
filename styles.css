@@ -16,9 +16,9 @@ body {
 header h1 {
     font-weight: 600;
     line-height: 1.5em;
-    padding: 5px;
+    padding-left: 25px;
     font-size: 200%;
-    text-align: center;
+    text-align: left;
 }
 
 nav ul {
@@ -37,20 +37,6 @@ nav a {
     font-size: 120%;
     text-decoration: none; /* Remove underline from anchor links */
 }
-
-.actions a{
-    text-decoration: none;
-    margin-left: 30px;
-}
-.action{
-    border: 2px solid #3D5360;
-    text-align: center;
-    padding:3px;
-    color: #3D5360;
-    text-decoration: none;
-}
-
-
 
 th{
     font-size: 120%;
@@ -74,16 +60,69 @@ nav a:hover,.back-link:hover, .action:hover{
 
 h2{
     padding: 5px 35px;
-    align-self: flex-start;
+    text-align: center;
 }
 
-.new_record, .page_edit,.page_delete, .container{
+
+.action{
+    border: 2px solid #3D5360;
+    text-align: center;
+    padding:3px;
+    color: #3D5360;
+    text-decoration: none;
+}
+
+.filter{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+#filterContainer{
+    margin-left: 30px;
+    margin-bottom:10px;
+
+}
+#filterForm {
+    display: inline;
+    width:100%;
+}
+
+#filterForm label, #genreFilter{
+    width:120px;
+}
+
+#filterBtn{
+    width:120px;
+    font-size: 90%;
+    background-color: #3D5360;
+    color:#b7ccaf;
+    margin: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-radius: 15px;
+}
+
+.filter a{
+    text-decoration: none;
+    margin-left: 30px;
+    width: 135px;
+}
+
+
+
+.new_record, .page_edit,.page_delete, .page_view{
     width:100%;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
 
+.book_info{
+    text-align: end;
 }
 
 .list{
@@ -107,21 +146,34 @@ label{
     font-weight: bold;
 }
 
-dt {
+dl{
+    display: flex;
+    flex-direction: row;
+    text-align: end;
+}
+
+dt,.book_info label {
     font-size:120%;
     width: 200px; 
     font-weight: bold;
     padding: 5px;
 }
 
-td,input,select,textarea {
-    height:2em;
-    width: 80%; 
-    box-sizing: border-box; 
-} 
 
-textarea{
-    height:300%}
+dd, .short{
+    width: 200px;
+    font-size:100%;
+    padding: 5px;
+    text-align: start;
+}
+
+.tall{
+    width: 200px;
+    height:3em;
+    font-size:120%;
+    padding: 5px;
+}
+
 
 .button input{
     font-size: 90%;
@@ -134,5 +186,6 @@ textarea{
     letter-spacing: 1px;
     border-radius: 15px;
     width: 11em;
+    height:2em;
 }
 

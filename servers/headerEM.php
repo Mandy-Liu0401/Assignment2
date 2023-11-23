@@ -17,6 +17,5 @@
                 <ul>
                         <li><a href="<?php echo 'index.php'; ?>">My Collection</a></li>
                         <li><a href="<?php echo 'searchBook.php'; ?>">Search Books</a></li>
-                        <li><a href=" <?php echo 'filter.php'; ?> ">Filter Books</a></li>
                 </ul>
         </nav>

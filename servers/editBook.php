@@ -61,22 +61,22 @@
             <form form action="<?php echo 'editBook.php?id=' . $result['id']; ?>" method="post">
                 <dl>
                     <dt>ID</dt>
-                    <dd><input type="text" name="id" value="<?php echo $result['id']; ?>" /></dd>
+                    <dd><input class="short"type="text" name="id" value="<?php echo $result['id']; ?>" /></dd>
                     </dd>
                 </dl>
                 <dl>
                     <dt>Title</dt>
-                    <dd><input type="text" name="title" value="<?php echo $result['title']; ?>" /></dd>
+                    <dd><input class="short type="text" name="title" value="<?php echo $result['title']; ?>" /></dd>
                 </dl>
                 <dl>
                     <dt>Author</dt>
-                    <dd><input type="text" name="author" value="<?php echo $result['author']; ?>" /></dd>
+                    <dd><input class="short type="text" name="author" value="<?php echo $result['author']; ?>" /></dd>
                 </dd>
                 </dl>
                 <dl>
                     <dt>Book Genre</dt>
                     <dd>
-                        <select name="genre" id="genre" >
+                        <select class="short" name="genre" id="genre" >
                         <!-- using the ternary operator (? :) to conditionally output the string 'selected' 
                         if the value of $result['genre'] is equal to 'biography', 
                         otherwise, it outputs an empty string. -->
@@ -94,11 +94,11 @@
                 </dl>
                 <dl>
                     <dt>Description</dt>
-                    <dd><input type="text" name="description" value="<?php echo $result['description']; ?>" /></dd>
+                    <dd><textarea class="tall"  name="description" ><?php echo $result['description']; ?></textarea></dd>
                 </dl>
                 <dl>
                     <dt>Comment</dt>
-                    <dd><input type="text" name="comment" value="<?php echo $result['comment']; ?>" /></dd>
+                    <dd><textarea class="tall" name="comment" ><?php echo $result['comment']; ?> </textarea></dd>
                 </dl>
 
                 <div class = "button">
