@@ -71,7 +71,7 @@
                 <th>&nbsp</th>
                 <th colspan=2>Title</th>
                 <th colspan=2>Author</th>
-                <th>Genre</th>
+                <th colspan=2>Genre</th>
                 <th colspan=2>Description</th>
                 <th colspan=2>Comment</th>
                 <th>&nbsp</th>
@@ -89,6 +89,7 @@
                     <td><?php echo $results['author']; ?></td>
                     <td>&nbsp</td>
                     <td><?php echo $results['genre']; ?></td>
+                    <td>&nbsp</td>
                     <td class="longText"><?php echo $results['description']; ?></td>
                     <td>&nbsp</td>
                     <td class="longText"><?php echo $results['comment']; ?></td>

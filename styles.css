@@ -10,6 +10,10 @@ body  {
     background-color: #b7ccaf;
 }
 
+.content{
+    height:90vh;
+}
+
 header h1 {
     font-weight: 600;
     line-height: 1.5em;
@@ -43,7 +47,7 @@ footer{
     font-size: 120%;
     padding:20px;
     position: fixed;
-    bottom: 0;
+    bottom:0;
 }
 
 .back-link{
@@ -114,7 +118,7 @@ textarea{
 
 
 
-.new_record, .page_edit,.page_delete, .page_view{
+.page_edit,.page_delete, .page_view{
     width:100%;
     display:flex;
     flex-direction: column;
@@ -123,10 +127,19 @@ textarea{
     text-align: center;
 }
 
+.new_record{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
-.book_info{
-    text-align: end;
+.warning {
+    text-align: left;
+    margin:0;
+    color: red;
+    font-size: 90%;
+
 }
 
 img{
@@ -135,7 +148,6 @@ img{
 .list{
     width:100%;
     line-height: 2em;
-    
     display:flex;
     flex-direction: row;
     justify-content: space-around;
@@ -153,6 +165,7 @@ form{
     line-height: 1.5em;
     
 }
+
 
 label{
     display: inline-block;
@@ -176,10 +189,11 @@ dt {
 
 
 .book-info label{
-    text-align: end;
-    padding:20px 20px;
+    width:130px;
+    text-align: start;
+    padding:20px 0;
     position: relative;
-    right: 25px;
+    right: 5px;
 }
 
 dd, .short{
@@ -224,3 +238,5 @@ dd, .short{
     height:2em;
 }
 
+@media (max-width: 900px) {
+}

@@ -22,12 +22,12 @@
                 
                 <div class="book-info">
                     <label for="title" >Title</label>
-                    <input class= "short" type="text" name="title" id="title" placeholder="Mandetory info"/>
+                    <input class= "short" type="text" name="title" id="title" placeholder="Mandatory info"/>
                 </div>
                     
                 <div class="book-info">
                     <label for="author" >Author</label>
-                    <input class= "short" type="text" name="author" id="author"  placeholder="Mandetory info"/> 
+                    <input class= "short" type="text" name="author" id="author"  placeholder="Mandatory info"/> 
                 </div>
 
                 <div class="book-info">
