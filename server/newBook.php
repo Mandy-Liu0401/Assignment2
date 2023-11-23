@@ -19,14 +19,15 @@
         
         <div class="new_record">
             <form id= "myForm" name="form" action='create.php' method="POST" onsubmit="return validate();">
+                
                 <div class="book-info">
                     <label for="title" >Title</label>
-                    <input class= "short" type="text" name="title" id="title" />
+                    <input class= "short" type="text" name="title" id="title" placeholder="Mandetory info"/>
                 </div>
                     
                 <div class="book-info">
                     <label for="author" >Author</label>
-                    <input class= "short" type="text" name="author" id="author" /> 
+                    <input class= "short" type="text" name="author" id="author"  placeholder="Mandetory info"/> 
                 </div>
 
                 <div class="book-info">

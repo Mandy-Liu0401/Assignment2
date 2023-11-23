@@ -88,16 +88,16 @@ genreInput.addEventListener("blur",()=>{ // arrow function
 function validate(){
     let valid = true;//global validation 
     let titleValidation = validateTitle();
-    let AauthorValidation = validateAuthor();
+    let AuthorValidation = validateAuthor();
     let genreValidation = validateGenre();
 
     if(titleValidation!==defaultMsg
-        ||AauthorValidation!==defaultMsg
+        ||AuthorValidation!==defaultMsg
         ||genreValidation!==defaultMsg){
         valid = false;
     }
     else{
-        document.getElementById("myform").reset();
+        document.getElementById("myForm").reset();
     }
     return valid;
 }
@@ -109,7 +109,7 @@ function resetFormError() {
     authorError.textContent = defaultMsg;
     genreError.textContent = defaultMsg;
 }
-document.getElementById("myform").addEventListener("reset",resetFormError);
+document.getElementById("myForm").addEventListener("reset",resetFormError);
 
 
 
