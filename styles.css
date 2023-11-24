@@ -1,5 +1,3 @@
-
-
 body  {
     min-height: 100vh;
     width: 100%;
@@ -11,7 +9,7 @@ body  {
 }
 
 .content{
-    height:90vh;
+    height:100vh;
 }
 
 header h1 {
@@ -25,7 +23,6 @@ header h1 {
 nav ul {
     list-style: none;
     text-align: center;
-    
 }
 
 nav li {
@@ -153,26 +150,28 @@ dl{
     
 }
 
-
 .warning {
     text-align: left;
     margin-left:15px;
     color: red;
     font-size: 90%;
     order:2
-
 }
 
 img{
     padding-right: 20px;
 }
+
+#imagePath{
+    width:220px;
+}
+
 .list{
     width:100%;
     line-height: 2em;
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    text-wrap: wrap;
     padding-left: 10px;
 }
 
@@ -205,13 +204,6 @@ dt {
     font-weight: bold;
     padding: 5px;
 }
-
-/* .new_container{
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-} */
-
 
 .book-info{
     width:500px;
@@ -295,5 +287,73 @@ dt {
     height:2em;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 600px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+    }
+    
+    .content {
+        flex: 1;
+    }
+
+    nav li{
+        display:block;
+    }
+
+    .filter {
+        flex-direction: column; /* Stack filter elements vertically */
+        align-items: center;
+    }
+
+    #genreFilter {
+        width: 100%; 
+        margin-bottom: 10px; 
+    }
+
+    dl, .book-info{
+        display:block;
+        margin-left: 10px;
+    }
+
+    .short,.dropdown,.tall {
+        width: 70vw;
+        display: block;
+        margin-left: 10px;
+    }
+
+    .list {
+        width: 100%;
+    }
+
+    .list tr{
+        display:flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .list th{
+        display:none;
+    }
+
+    .list td {
+        min-width: 100%;
+        display: block;
+    }
+
+    .button,.button input, #submit, #reset{
+        display:block;
+        width:min-content;
+        height:min-content;
+        align-items:start;
+    }
+
+    footer{
+        position: relative;
+        bottom:0;
+    }
+
 }

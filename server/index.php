@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Mengying Liu and Wenxin Li">
+    <meta name="description" content="Index.php file for Assigbment 2">
+    <meta name="keywords" content="book catelogue">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../styles.css">
     <script src="../scripts/validate.js" defer></script>
@@ -58,8 +61,8 @@
                         }
                         ?>
                     </select>
-                    <input id= "filterBtn"type="submit" value="Apply Filter">
-                    
+                    <input id="filterBtn" type="submit" value="Apply Filter">
+
                 </form>
             </div>
             <a class="action" href="newBook.php">Add A New Book</a>
@@ -84,16 +87,26 @@
             <?php while ($results = mysqli_fetch_assoc($result_set)) { ?>
                 <tr>
                     <!-- Insert image with dynamic source -->
-                    <td ><img src="<?php echo $results['imagePath'] ; ?>" alt="Book Image" width="120" height="180"></td>
-                    <td><?php echo $results['title']; ?></td>
+                    <td><img src="<?php echo $results['imagePath']; ?>" alt="Book Image" width="120" height="180"></td>
+                    <td>
+                        <?php echo $results['title']; ?>
+                    </td>
                     <td>&nbsp</td>
-                    <td><?php echo $results['author']; ?></td>
+                    <td>
+                        <?php echo $results['author']; ?>
+                    </td>
                     <td>&nbsp</td>
-                    <td><?php echo $results['genre']; ?></td>
+                    <td>
+                        <?php echo $results['genre']; ?>
+                    </td>
                     <td>&nbsp</td>
-                    <td class="longText"><?php echo $results['description']; ?></td>
+                    <td class="longText">
+                        <?php echo $results['description']; ?>
+                    </td>
                     <td>&nbsp</td>
-                    <td class="longText"><?php echo $results['comment']; ?></td>
+                    <td class="longText">
+                        <?php echo $results['comment']; ?>
+                    </td>
                     <td>&nbsp</td>
                     <td><a class="action" href="<?php echo "viewBook.php?id=" . $results['id']; ?>">View</a></td>
                     <td><a class="action" href="<?php echo "editBook.php?id=" . $results['id']; ?>">Edit</a></td>

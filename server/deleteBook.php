@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+    <title>Delete The Book</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Mengying Liu and Wenxin Li">
+    <meta name="description" content="deleteBook.php file for Assigbment 2">
+    <meta name="keywords" content="book catelogue">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="all" href="../styles.css" />
 </head>
 
@@ -12,8 +18,8 @@
     include "headerEm.php";
     $db = db_connect();
 
-    if (!isset($_GET['id'])) {//check if we got the id
-        header("Location:  index.php");//if not, stay in the index page
+    if (!isset($_GET['id'])) { //check if we got the id
+        header("Location:  index.php"); //if not, stay in the index page
     }
 
     $id = $_GET['id'];
@@ -30,8 +36,8 @@
 
         $result_set = mysqli_query($db, $sql);
 
-        $result = mysqli_fetch_assoc($result_set);//it is an array holds all info for this id
-
+        $result = mysqli_fetch_assoc($result_set); //it is an array holds all info for this id
+    
     }
 
     ?>
@@ -47,20 +53,21 @@
             <h2>Delete The Book</h2>
             <p class="item">Are you sure you want to delete this book?</p>
             <p class="item"><em>
-                <?php echo $result['title']; ?> by
-                <?php echo $result['author']; ?></em>
+                    <?php echo $result['title']; ?> by
+                    <?php echo $result['author']; ?>
+                </em>
             </p>
 
             <form form action="<?php echo 'deleteBook.php?id=' . $result['id']; ?>" method="post">
                 <div class="button">
-                <input type="submit" name="commit" value="Delete Book" />                    
-                <input type="button" value="Cancel" onclick="window.location.href='index.php';" />
+                    <input type="submit" name="commit" value="Delete Book" />
+                    <input type="button" value="Cancel" onclick="window.location.href='index.php';" />
                 </div>
             </form>
         </div>
         <?php include 'footerEm.php'; ?>
     </div>
 
-    </body>
+</body>
 
 </html>

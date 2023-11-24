@@ -19,3 +19,6 @@
                         <li><a href="<?php echo 'searchBook.php'; ?>">Search Books</a></li>
                 </ul>
         </nav>
+</body>
+
+</html>

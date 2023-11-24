@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+    <title>Book Details</title>
+    <meta name="author" content="Mengying Liu and Wenxin Li">
+    <meta name="description" content="viewBook.php file for Assigbment 2">
+    <meta name="keywords" content="book catelogue">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css" />
 </head>
 
@@ -41,27 +46,38 @@
             <div class="view_list">
                 <dl>
                     <dt>Title</dt>
-                    <dd><?php echo $result['title']; ?></dd>
+                    <dd>
+                        <?php echo $result['title']; ?>
+                    </dd>
                 </dl>
 
-                <dl><dt>Author</dt>
-                    <dd><?php echo $result['author']; ?></dd>
+                <dl>
+                    <dt>Author</dt>
+                    <dd>
+                        <?php echo $result['author']; ?>
+                    </dd>
                 </dl>
                 <dl>
                     <dt>Book Genre</dt>
-                    <dd ><?php echo $result['genre']; ?></dd>
+                    <dd>
+                        <?php echo $result['genre']; ?>
+                    </dd>
                 </dl>
                 <dl>
-                <dt>Description</dt>
-                    <dd><?php echo $result['description']; ?></dd>
+                    <dt>Description</dt>
+                    <dd>
+                        <?php echo $result['description']; ?>
+                    </dd>
                 </dl>
                 <dl>
-                <dt>Comment</dt>
-                <dd><?php echo $result['comment']; ?></dd>
+                    <dt>Comment</dt>
+                    <dd>
+                        <?php echo $result['comment']; ?>
+                    </dd>
                 </dl>
                 <dl>
-                <dt>Book Cover</dt>
-                <dd><img src="<?php echo $result['imagePath']; ?>" alt="Book Image" width="120" height="180"></dd>
+                    <dt>Book Cover</dt>
+                    <dd><img src="<?php echo $result['imagePath']; ?>" alt="Book Image" width="120" height="180"></dd>
                 </dl>
             </div>
             <div class="button">
