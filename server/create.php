@@ -12,16 +12,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //check is the data has submitted
     $genre = $_POST['genre'];
     $description = $_POST['description'];
     $comment = $_POST['comment'];
+    
+    if(isset($_FILES['imagePath'])){
+        $file_name = $_FILES['imagePath']['name'];
+        $file_tmp = $_FILES['imagePath']['tmp_name'];
+        move_uploaded_file($file_tmp,"../images/".$file_name);
+    }
 
-    $sql = "INSERT INTO books (title, author, genre, description, comment) 
-        VALUES ('$title','$author','$genre', '$description', '$comment')";
+    else{
+        $file_name = 'default.png';
+    }
+    $sql = "INSERT INTO books (title, author, genre, description, comment, imagePath) 
+        VALUES ('$title','$author','$genre', '$description', '$comment','../images/$file_name')";
+    
     $result = mysqli_query($db, $sql);
-    // For INSERT statements, $result is true/false
-
 
     $id = mysqli_insert_id($db);
     //redirect to show page
-    header("Location: viewBook.php?id=  $id");
+    header("Location: viewBook.php?id=$id");
 
 
 } else {

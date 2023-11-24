@@ -13,6 +13,11 @@
     require_once('database.php');
     include "headerEm.php";
     $db = db_connect();
+
+    if (!isset($_GET['id'])) { //check if we got the id
+        header("Location:  index.php"); //if not, stay in the index page
+    }
+
     //access URL parameter
     $id = $_GET['id']; //get the id value from url
     
@@ -53,6 +58,10 @@
                 <dl>
                 <dt>Comment</dt>
                 <dd><?php echo $result['comment']; ?></dd>
+                </dl>
+                <dl>
+                <dt>Book Cover</dt>
+                <dd><img src="<?php echo $result['imagePath']; ?>" alt="Book Image" width="120" height="180"></dd>
                 </dl>
             </div>
             <div class="button">

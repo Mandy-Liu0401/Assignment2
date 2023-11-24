@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="../styles.css" />
+    <!-- <script src="../scripts/validate.js" defer></script> -->
 </head>
 
 <body>
@@ -17,22 +18,23 @@ include "headerEm.php";
 
     <div class="new_record">
 
-        <form action="searchResults.php" method="get">
+        <form action="searchResults.php" method="GET" >
             
             <div class="book-info">
                 <label for="title">Title:</label>
-                <input class= "short" type="text" name="title" id="title">
+                <input class= "short" type="text" name="title" id="title" style="margin-top: 15px;">
             </div>
             
             <div class="book-info">
                 <label for="author">Author:</label>
-                <input class= "short" type="text" name="author" id="author">
+                <input class= "short" type="text" name="author" id="author" style="margin-top: 15px;">
             </div> 
 
             <div class="book-info">
                 <label for="genre">Genre:</label>
                 <select class= "dropdown" name="genre" id="genre">
-                    <option value="nonFiction" selected>Non-fiction</option>
+                    <option value="" disabled selected>Please select genre</option>
+                    <option value="nonFiction" >Non-fiction</option>
                     <option value="childrens">Children's Book</option>
                     <option value="fantasy">Fantasy</option>
                     <option value="scienceFiction">Science-Fiction</option>
@@ -45,7 +47,7 @@ include "headerEm.php";
             </div> 
             <div class = "button">
                 <input type="submit" value="Search">
-                <input type="reset" value="Reset">
+                <button id = "reset" type="reset">Reset</button>
             </div>
         </form>
     </div>    

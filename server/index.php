@@ -52,8 +52,9 @@
                         <?php
                         // Fetch distinct genres from the database
                         $distinctGenres = getDistinctGenres($db);
-                        foreach ($distinctGenres as $genre) {
-                            echo "<option value='{$genre}'>{$genre}</option>";
+                        foreach ($distinctGenres as $genreOption) {
+                            $selected = ($genreOption == $_GET['genre']) ? 'selected' : '';
+                            echo "<option value='{$genreOption}' {$selected}>{$genreOption}</option>";
                         }
                         ?>
                     </select>
@@ -83,7 +84,7 @@
             <?php while ($results = mysqli_fetch_assoc($result_set)) { ?>
                 <tr>
                     <!-- Insert image with dynamic source -->
-                    <td ><img src="<?php echo '../images/' . $results['id'] . '.jpg'; ?>" alt="Book Image" width="120" height="180"></td>
+                    <td ><img src="<?php echo $results['imagePath'] ; ?>" alt="Book Image" width="120" height="180"></td>
                     <td><?php echo $results['title']; ?></td>
                     <td>&nbsp</td>
                     <td><?php echo $results['author']; ?></td>

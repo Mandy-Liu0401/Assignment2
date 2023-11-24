@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS `books` (
     `genre` varchar(255) NOT NULL,
     `description` TEXT,
     `comment` TEXT,
+    `imagePath` varchar(255),
     PRIMARY KEY (`id`)
 );
 

@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="../styles.css" />
+    <script src="../scripts/validate.js" defer></script>
 </head>
 
 <body>
@@ -28,10 +29,17 @@
         $genre = $_POST['genre'];
         $description = $_POST['description'];
         $comment = $_POST['comment'];
+        $imagePath=$_POST['imagePath'];
+
+        if (isset($_FILES['imagePath'])) {
+            $file_name = $_FILES['imagePath']['name'];
+            $file_tmp = $_FILES['imagePath']['tmp_name'];
+            move_uploaded_file($file_tmp,"../images/".$_FILES['imagePath']['name']);
+        }
 
         //update the table with new information
         $sql = "UPDATE books set title = '$title' , author = '$author' , 
-        genre = '$genre' , description = '$description', comment = '$comment'where id = '$id' ";
+        genre = '$genre' , description = '$description', comment = '$comment', imagePath = '../images/$file_name' where id = '$id' ";
         $result = mysqli_query($db, $sql);
 
         //redirect to viewBook page
@@ -58,28 +66,25 @@
             <h2>Edit Book Info</h2>
 
             <!-- point to the same page, and fill in the array content to a form -->
-            <form form action="<?php echo 'editBook.php?id=' . $result['id']; ?>" method="post">
-                <dl>
-                    <dt>ID</dt>
-                    <dd><input class="short"type="text" name="id" value="<?php echo $result['id']; ?>" /></dd>
-                    </dd>
-                </dl>
-                <dl>
+            <form form action="<?php echo 'editBook.php?id=' . $result['id']; ?>" method="post" enctype="multipart/form-data">
+
+                <dl class="book-info">
                     <dt>Title</dt>
-                    <dd><input class="short" type="text" name="title" value="<?php echo $result['title']; ?>" /></dd>
+                    <dd><input id="title" class="short" type="text" name="title" value="<?php echo $result['title']; ?>" /></dd>
                 </dl>
-                <dl>
+                <dl class="book-info">
                     <dt>Author</dt>
-                    <dd><input class="short" type="text" name="author" value="<?php echo $result['author']; ?>" /></dd>
+                    <dd><input id = "author" class="short" type="text" name="author" value="<?php echo $result['author']; ?>" /></dd>
                 </dd>
                 </dl>
-                <dl>
+                <dl class="book-info">
                     <dt>Book Genre</dt>
                     <dd>
                         <select class="dropdown" name="genre" id="genre" >
                         <!-- using the ternary operator (? :) to conditionally output the string 'selected' 
                         if the value of $result['genre'] is equal to 'biography', 
                         otherwise, it outputs an empty string. -->
+                        <option value="" disabled selected>Please select genre</option>
                         <option value="nonFiction" <?php echo ($result['genre'] == 'nonFiction') ? 'selected' : ''; ?>>Non-fiction</option>
                         <option value="childrens" <?php echo ($result['genre'] == 'childrens') ? 'selected' : ''; ?>>Children's Book</option>
                         <option value="fantasy" <?php echo ($result['genre'] == 'fantasy') ? 'selected' : ''; ?>>Fantasy</option>
@@ -92,23 +97,30 @@
                         </select>
                 </dd>
                 </dl>
-                <dl>
+                <dl class="book-info">
                     <dt>Description</dt>
                     <dd><textarea class="tall"  name="description" ><?php echo $result['description']; ?></textarea></dd>
                 </dl>
-                <dl>
+                <dl class="book-info">
                     <dt>Comment</dt>
                     <dd><textarea class="tall" name="comment" ><?php echo $result['comment']; ?> </textarea></dd>
                 </dl>
+                <dl class="book-info">
+                    <dt >Book Cover</dt>
+                    <dd><img src="<?php echo $result['imagePath'] ; ?>" alt="Book Image" width="120" height="180"></dd>
+                </dl>
+                <dl class="book-info">
+                    <dt>Update Cover</dt>
+                    <dd><input id="imagePath" type = "file" name = "imagePath"/></dd>
+                </dl>
+
 
                 <div class = "button">
                         <button id ="submit" type="submit">Comfirm Update</button>
                         <input type="button" value="Cancel" onclick="window.location.href='index.php';" />
                     </div>
             </form>
-
         </div>
-
     </div>
 
     <?php include 'footerEm.php'; ?>

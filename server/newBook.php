@@ -18,16 +18,16 @@
         <h2>Add new book to the collection</h2>
         
         <div class="new_record">
-            <form id= "myForm" name="form" action='create.php' method="POST" onsubmit="return validate();">
+            <form id= "myForm" name="form" action='create.php' method="POST" enctype = "multipart/form-data" onsubmit="return validate();">
                 
                 <div class="book-info">
                     <label for="title" >Title</label>
-                    <input class= "short" type="text" name="title" id="title" placeholder="Mandatory info"/>
+                    <input class= "short" type="text" name="title" id="title" placeholder="Mandatory info" style="margin-top: 15px;"/>
                 </div>
                     
                 <div class="book-info">
                     <label for="author" >Author</label>
-                    <input class= "short" type="text" name="author" id="author"  placeholder="Mandatory info"/> 
+                    <input class= "short" type="text" name="author" id="author"  placeholder="Mandatory info" style="margin-top: 15px;"/> 
                 </div>
 
                 <div class="book-info">
@@ -45,15 +45,20 @@
                         <option value="biography">Biography</option>
                     </select>
                 </div>
-
+                
                 <div class="book-info">
                     <label for="description" >Enter Description</label>
                     <textarea class="tall" name="description" id="description" placeholder="Optional"></textarea>
                 </div>
-
+                <br>
                 <div class="book-info">
                     <label for="comment" >Comments</label>
                     <textarea class="tall" name="comment" id="comment" placeholder="Optional"></textarea>
+                </div>
+                <br>
+                <div class="book-info">
+                    <label for="imagePath" >Upload a Cover</label>
+                    <input id="imagePath" type = "file" name = "imagePath" style="margin-top: 15px;"/>
                 </div>
 
                 <div class = "button">
