@@ -26,6 +26,11 @@
 
     $page_title = 'Edit Book';
 
+    // Fetch the book information by ID
+    $sql = "SELECT * FROM books WHERE id= '$id' ";
+    $result_set = mysqli_query($db, $sql);
+    $result = mysqli_fetch_assoc($result_set);
+
     // Handle form values sent by newBook.php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -35,30 +40,28 @@
         $genre = $_POST['genre'];
         $description = $_POST['description'];
         $comment = $_POST['comment'];
-        $imagePath = $_POST['imagePath'];
+        // $imagePath = $_POST['imagePath'];
 
-        if (isset($_FILES['imagePath'])) {
+        if (isset($_FILES['imagePath'])&& $_FILES['imagePath']['error'] == UPLOAD_ERR_OK) {
             $file_name = $_FILES['imagePath']['name'];
             $file_tmp = $_FILES['imagePath']['tmp_name'];
-            move_uploaded_file($file_tmp, "../images/" . $_FILES['imagePath']['name']);
-        }
+            $file_path = "../images/".$file_name;
+            move_uploaded_file($file_tmp, $file_path);
+            // Update imagePath only if a new file is uploaded
+            $imagePath = $file_path;
+        }else {
+            // Keep the original value if no new file is uploaded
+            $imagePath = $result['imagePath'];}
 
         //update the table with new information
         $sql = "UPDATE books set title = '$title' , author = '$author' , 
-        genre = '$genre' , description = '$description', comment = '$comment', imagePath = '../images/$file_name' where id = '$id' ";
+        genre = '$genre' , description = '$description', comment = '$comment', imagePath = '$imagePath' where id = '$id' ";
         $result = mysqli_query($db, $sql);
 
         //redirect to viewBook page
         header("Location: viewBook.php?id=  $id");
     }
-    // display the book info by id
-    else {
-        $sql = "SELECT * FROM books WHERE id= '$id' ";
 
-        $result_set = mysqli_query($db, $sql);
-
-        $result = mysqli_fetch_assoc($result_set); //it is an array holds all info for this id
-    }
     ?>
 
     <?php include 'headerEm.php'; ?>
